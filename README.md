@@ -25,14 +25,14 @@ Requires an extension/app that allows userscript and Javascript modifications to
 // @match        https://twitter.com/*
 // @match        https://x.com/*
 // @grant        none
-// @version      1.1
+// @version      1.1.1
 // ==/UserScript==
 
 (function() {
     'use strict';
 
     function hideElementsInSidebar() {
-        const sidebarColumn = document.querySelector('[aria-labelledby="accessible-list-0"], .sidebarColumn'); // Update to actual class or selector for sidebar
+        const sidebarColumn = document.querySelector('[data-testid="sidebarColumn"]');
 
         if (sidebarColumn) {
             sidebarColumn.querySelectorAll('.css-175oi2r.r-1adg3ll.r-1ny4l3l').forEach(element => {
